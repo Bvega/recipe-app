@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infographic: The Essentials of HTML</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="text-gray-800">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-16">
+            <h1 class="text-4xl md:text-6xl font-black text-[#005f73] uppercase tracking-wide">The Essentials of HTML</h1>
+            <p class="text-lg md:text-xl mt-4 text-[#0a9396] max-w-3xl mx-auto">An infographic detailing the foundational language of the web, from basic structure to best practices, based on a comprehensive deep-dive report.</p>
+        </header>
+
+        <section id="introduction" class="mb-20 text-center">
+            <div class="bg-white rounded-lg shadow-xl p-8 md:p-12 border-t-8 border-[#0a9396]">
+                <h2 class="text-3xl font-bold text-[#005f73] mb-4">HTML: The Skeleton of Every Web Page</h2>
+                <p class="text-lg text-gray-600 max-w-4xl mx-auto">
+                    HyperText Markup Language (HTML) is not a programming language, but the structural foundation for all web content. It uses "elements" to wrap content, giving it meaning and defining how browsers display it. This fundamental role makes understanding HTML the critical first step for any aspiring web developer.
+                </p>
+            </div>
+        </section>
+
+        <section id="anatomy" class="mb-20">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#005f73]">Anatomy of a Web Page</h2>
+                <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Every HTML document follows a consistent, hierarchical structure. This "boilerplate" code tells the browser what kind of document it is and separates the invisible metadata from the visible page content.</p>
+                <div class="max-w-md mx-auto">
+                    <div class="flowchart-box shadow-md">&lt;!DOCTYPE html&gt;</div>
+                    <div class="flowchart-connector" style="height: 2rem;"></div>
+                    <div class="flowchart-box shadow-md">&lt;html lang="en"&gt;</div>
+                    <div class="flowchart-connector" style="height: 2rem;"></div>
+                    <div class="flex justify-center items-start">
+                        <div class="w-px bg-[#94d2bd]"></div>
+                    </div>
+                    <div class="relative py-4">
+                        <div class="absolute top-0 left-1/2 w-1/2 h-px bg-[#94d2bd]"></div>
+                        <div class="absolute top-0 left-1/2 w-px h-full bg-[#94d2bd]"></div>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 relative">
+                        <div class="absolute top-[-34px] left-0 w-full h-px bg-[#94d2bd]"></div>
+                        <div>
+                            <div class="flowchart-box shadow-sm">&lt;head&gt;</div>
+                            <div class="flowchart-connector" style="height: 1rem;"></div>
+                            <p class="text-center text-sm text-gray-500 p-2 bg-gray-50 rounded">Contains machine-readable metadata like the page title, character set, and links to CSS files. Not visible on the page.</p>
+                        </div>
+                        <div>
+                            <div class="flowchart-box shadow-sm">&lt;body&gt;</div>
+                            <div class="flowchart-connector" style="height: 1rem;"></div>
+                            <p class="text-center text-sm text-gray-500 p-2 bg-gray-50 rounded">Contains the actual visible content of the web page, including all text, images, videos, and forms.</p>
+                        </div>
+                    </div>
+                    <div class="flowchart-connector" style="height: 2rem;"></div>
+                    <div class="flowchart-box shadow-md">&lt;/html&gt;</div>
+                </div>
+            </div>
+        </section>
+
+        <section id="elements" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#005f73]">The Building Blocks of Content</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-center mb-2 text-[#005f73]">Most Common Elements</h3>
+                    <p class="text-center text-gray-600 mb-6">HTML provides a wide range of elements to structure different types of content. This chart highlights the relative importance and commonality of key tags used in modern web development.</p>
+                    <div class="chart-container">
+                        <canvas id="commonElementsChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-center mb-2 text-[#005f73]">Organizing with Lists</h3>
+                    <p class="text-center text-gray-600 mb-6">Lists are fundamental for grouping related items. The choice between an unordered list (`<ul>`) and an ordered list (`<ol>`) depends entirely on whether the sequence of items is significant.</p>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-4">
+                        <div>
+                            <h4 class="font-bold text-[#0a9396]">Unordered List (&lt;ul&gt;)</h4>
+                            <p class="text-sm text-gray-500 mb-2">Use when order doesn't matter.</p>
+                            <ul class="list-disc list-inside bg-gray-50 p-4 rounded-md space-y-1">
+                                <li>Apples</li>
+                                <li>Oranges</li>
+                                <li>Bananas</li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#0a9396]">Ordered List (&lt;ol&gt;)</h4>
+                            <p class="text-sm text-gray-500 mb-2">Use for step-by-step instructions.</p>
+                            <ol class="list-decimal list-inside bg-gray-50 p-4 rounded-md space-y-1">
+                                <li>Gather ingredients</li>
+                                <li>Mix the batter</li>
+                                <li>Bake for 30 minutes</li>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="semantics" class="mb-20">
+            <h2 class="text-3xl font-bold text-center mb-8 text-[#005f73]">The Power of Semantics</h2>
+            <p class="text-center text-gray-600 mb-8 max-w-3xl mx-auto">Semantic HTML means using tags that describe the meaning of the content they enclose, not just how they look. This practice is a cornerstone of modern web development for several critical reasons.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-white rounded-lg shadow-lg p-6 flex flex-col items-center">
+                    <h3 class="text-2xl font-bold text-center mb-2 text-[#005f73]">Core Benefits of Semantic HTML</h3>
+                    <p class="text-center text-gray-600 mb-6">Each benefit contributes to a better, more robust, and more inclusive web.</p>
+                    <div class="chart-container">
+                        <canvas id="semanticBenefitsChart"></canvas>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-2xl font-bold text-center mb-2 text-[#005f73]">Code Readability: Before & After</h3>
+                    <p class="text-center text-gray-600 mb-6">Compare the two code blocks. The semantic version is immediately understandable to developers, screen readers, and search engines, while the non-semantic version is meaningless without its CSS.</p>
+                     <div class="grid grid-cols-1 gap-4">
+                        <div>
+                            <h4 class="font-bold text-[#ae2012]">Non-Semantic (Div Soup)</h4>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-html">&lt;div class="header"&gt;
+  &lt;div class="nav"&gt;...&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="main-content"&gt;
+  &lt;div class="article-title"&gt;...&lt;/div&gt;
+  &lt;div class="text"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                        </div>
+                        <div>
+                            <h4 class="font-bold text-[#0a9396]">Semantic HTML</h4>
+                            <pre class="bg-gray-800 text-white p-4 rounded-md text-sm overflow-x-auto"><code class="language-html">&lt;header&gt;
+  &lt;nav&gt;...&lt;/nav&gt;
+&lt;/header&gt;
+&lt;main&gt;
+  &lt;h1&gt;...&lt;/h1&gt;
+  &lt;p&gt;...&lt;/p&gt;
+&lt;/main&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="trinity" class="mb-20">
+            <div class="bg-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-2 text-[#005f73]">The Web Trinity: Separation of Concerns</h2>
+                <p class="text-center text-gray-600 mb-12 max-w-3xl mx-auto">Modern web development is built on the principle of "Separation of Concerns." Each technology has a distinct job, making websites easier to build, maintain, and scale. HTML provides the structure, CSS handles the styling, and JavaScript adds interactivity.</p>
+                <div class="relative h-80 w-full max-w-2xl mx-auto flex items-center justify-center">
+                    <div class="absolute w-48 h-48 md:w-56 md:h-56 bg-[#94d2bd] rounded-full flex items-center justify-center text-center p-4 opacity-90" style="left: 10%; top: 15%;">
+                        <div class="text-white">
+                            <h3 class="font-bold text-lg">HTML</h3>
+                            <p class="text-sm font-semibold">Structure</p>
+                        </div>
+                    </div>
+                    <div class="absolute w-48 h-48 md:w-56 md:h-56 bg-[#ee9b00] rounded-full flex items-center justify-center text-center p-4 opacity-90" style="right: 10%; top: 15%;">
+                        <div class="text-white">
+                            <h3 class="font-bold text-lg">CSS</h3>
+                            <p class="text-sm font-semibold">Presentation</p>
+                        </div>
+                    </div>
+                    <div class="absolute w-48 h-48 md:w-56 md:h-56 bg-[#bb3e03] rounded-full flex items-center justify-center text-center p-4 opacity-90" style="left: 50%; top: 50%; transform: translate(-50%, -50%);">
+                        <div class="text-white">
+                            <h3 class="font-bold text-lg">JavaScript</h3>
+                            <p class="text-sm font-semibold">Behavior</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="best-practices" class="mb-16">
+            <div class="bg-[#005f73] text-white rounded-lg shadow-lg p-6 md:p-8">
+                <h2 class="text-3xl font-bold text-center mb-8">Best Practices Checklist</h2>
+                <div class="max-w-4xl mx-auto grid grid-cols-1 sm:grid-cols-2 gap-6">
+                    <div class="flex items-start space-x-4">
+                        <span class="text-2xl text-[#94d2bd]">✔️</span>
+                        <div>
+                            <h4 class="font-bold">Use the Correct Doctype</h4>
+                            <p class="text-sm opacity-90">Always start with `&lt;!DOCTYPE html&gt;` to ensure standards mode.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-2xl text-[#94d2bd]">✔️</span>
+                        <div>
+                            <h4 class="font-bold">Set the Language</h4>
+                            <p class="text-sm opacity-90">Use `<html lang="en">` for accessibility and SEO.</p>
+                        </div>
+                    </div>
+                     <div class="flex items-start space-x-4">
+                        <span class="text-2xl text-[#94d2bd]">✔️</span>
+                        <div>
+                            <h4 class="font-bold">Define Character Set</h4>
+                            <p class="text-sm opacity-90">Include `<meta charset="utf-8">` for universal character support.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-2xl text-[#94d2bd]">✔️</span>
+                        <div>
+                            <h4 class="font-bold">Always Use `alt` Tags</h4>
+                            <p class="text-sm opacity-90">Provide descriptive `alt` text for all images for accessibility.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-2xl text-[#94d2bd]">✔️</span>
+                        <div>
+                            <h4 class="font-bold">Prioritize Semantic HTML</h4>
+                            <p class="text-sm opacity-90">Use tags that describe content meaning, not appearance.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start space-x-4">
+                        <span class="text-2xl text-[#94d2bd]">✔️</span>
+                        <div>
+                            <h4 class="font-bold">Validate Your Code</h4>
+                            <p class="text-sm opacity-90">Use tools like the W3C validator to catch errors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+        <footer class="text-center text-sm text-gray-500 mt-12">
+            <p>Infographic created based on the "HTML Basics Learning Guide" report.</p>
+            <p>&copy; 2025 https://www.smartbackendai.com/ All rights reserved.</p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
